@@ -10,7 +10,7 @@ const app = express();
 // --- UPDATE THIS CORS BLOCK ---
 const allowedOrigins = [
   "http://localhost:5173",          // For local development testing
-  "https://gptclone-ui.netlify.app" // Your live production Netlify app
+  "https://chatgptch.netlify.app" // Your live production Netlify app
 ];
 
 app.use(
@@ -38,7 +38,7 @@ async function startServer() {
     connection.release();
     // Render handles the port automatically using process.env.PORT, 
     // but keeping 3788 as a local fallback is great!
-    const PORT = process.env.PORT || 3777;
+    const PORT = process.env.PORT || 3777 ;
     app.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}`);
     });

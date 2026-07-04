@@ -7,7 +7,7 @@ import { errorHandler } from "./src/middleware/error-handler.js";
 
 // ...
 
-app.use(errorHandler);
+
 
 const app = express();
 
@@ -34,7 +34,7 @@ app.use(
 
 app.use(express.json()); // used to parse json payloads
 app.use("/api", mainRouter);
-app.use(ErrorHandler);
+app.use(errorHandler);
 
 async function startServer() {
   try {

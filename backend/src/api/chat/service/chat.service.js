@@ -26,13 +26,12 @@ export const getRecentConversationRows = async (limit = 5) => {
     Number.isNaN(normalizedLimit) || normalizedLimit <= 0
       ? 20
       : normalizedLimit;
-  const [rows] = await db.execute(
-    `SELECT id, role, content, created_at
-   FROM conversations
-   ORDER BY id DESC
-   LIMIT ?`,
-    [safeLimit],
-  );
+  const [rows] = await db.query(`
+  SELECT id, role, content, created_at
+  FROM conversations
+  ORDER BY id DESC
+  LIMIT ${safeLimit}
+`);
   return rows.reverse();
 };
 

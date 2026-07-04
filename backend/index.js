@@ -3,7 +3,7 @@ import db from "./db/db.config.js";
 import express from "express";
 import cors from "cors";
 import mainRouter from "./src/api/main.routes.js";                  
-import { ErrorHandler } from "../src/middleware/errorHandler.js"; // Adjust the path as necessary
+import { ErrorHandler } from "./src/middleware/error-handler.js"; // Adjust the path as necessary
 
 const app = express();
 
